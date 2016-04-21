@@ -8,11 +8,11 @@ describe_recipe 'sync-gateway:default' do
   end
 
   it 'creates config.json' do
-      assert_path_exists file("#{node['syncGateway']['install_dir']}/config.json")
+      assert_path_exists file(node['sync_gateway']['config_path'])
   end
 
   describe "sync-gateway service" do
-    let(:syncGateway) { service node['syncGateway']['service_name'] }
+    let(:syncGateway) { service node['sync_gateway']['service_name'] }
 
     it "starts on boot" do
       syncGateway.must_be_enabled
