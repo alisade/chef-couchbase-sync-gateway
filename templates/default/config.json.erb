@@ -18,6 +18,9 @@
                 "bucket": "<%= config['bucket'] %>"
                 , "server": "<%= config['server'] %>"
                 , "sync": `<%= config['sync'].gsub(/\r\n?/, '\n') %>`
+                <% unless config['username'].nil? %>
+                    , "username": "<%= config['username'] %>"
+                <% end %>
                 <% unless config['password'].nil? %>
                     , "password": "<%= config['password'] %>"
                 <% end %>
@@ -36,7 +39,7 @@
         , "facebook": <%= node['sync_gateway']['facebook'].to_json %>
     <% end %>
     , "interface": "<%= node['sync_gateway']['interface'] %>"
-    , "log": <%= node['sync_gateway']['log'] %>
+    , "log": <%= node['sync_gateway']['log'].to_json %>
     , "logFilePath": "<%= node['sync_gateway']['logFilePath'] %>"
     <% unless node['sync_gateway']['maxCouchbaseOverflow'].nil? %>
         , "maxCouchbaseOverflow": <%= node['sync_gateway']['maxCouchbaseOverflow'] %>
