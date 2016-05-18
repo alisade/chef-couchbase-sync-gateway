@@ -24,6 +24,6 @@ template node['sync_gateway']['config_path'] do
 end
 
 service "#{node['sync_gateway']['service_name']}" do
-    :enable
+    action [:enable, :start]
 end
 
