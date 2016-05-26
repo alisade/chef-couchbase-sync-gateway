@@ -4,7 +4,7 @@ maintainer_email 'terkildsen@monsenso.com'
 license 'MIT'
 description 'Installs and configures sync-gateway'
 long_description 'Installs and configures sync-gateway'
-version '0.1.1'
+version '0.1.2'
 
 supports 'windows'
 

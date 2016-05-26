@@ -24,6 +24,9 @@
                 <% unless config['password'].nil? %>
                     , "password": "<%= config['password'] %>"
                 <% end %>
+                <% unless config['feed_type'].nil? %>
+                    , "feed_type": "<%= config['feed_type'] %>"
+                <% end %>
                 <% unless config['shadow'].nil? %>
                     , "shadow": <%= config['shadow'].to_json %>
                 <% end %>
